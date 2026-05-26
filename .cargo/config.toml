@@ -1,0 +1,41 @@
+[build]
+target = [
+    "thumbv6m-none-eabi.json",
+    #    "thumbv7m-none-eabi.json",
+    #    "thumbv7em-none-eabi.json",
+    #    "thumbv7em-none-eabihf.json",
+    #    "thumbv8m.base-none-eabi.json",
+    #    "thumbv8m.main-none-eabi.json",
+    #    "thumbv8m.main-none-eabihf.json",
+]
+
+[target."cfg(all())"]
+rustflags = [
+    "-Clink-arg=--nmagic",
+    "-Clink-arg=-Tlink.x",
+    #    "-Ctarget-cpu=cortex-m0",
+    "-Ctarget-cpu=cortex-m0plus",
+    #    "-Ctarget-cpu=cortex-m1",
+    #    "-Ctarget-cpu=cortex-m3",
+    #    "-Ctarget-cpu=cortex-m4",
+    #    "-Ctarget-cpu=cortex-m7",
+    #    "-Ctarget-cpu=cortex-m23",
+    #    "-Ctarget-cpu=cortex-m33",
+    #    "-Ctarget-cpu=cortex-m35p",
+    #    "-Ctarget-cpu=cortex-m55",
+    #    "-Ctarget-cpu=cortex-m85",
+]
+
+
+[unstable]
+json-target-spec = true
+panic-immediate-abort = true
+build-std = [
+    "core",
+    "alloc",
+    "panic_abort",
+    "std",
+]
+build-std-features = [
+    "optimize_for_size",
+]

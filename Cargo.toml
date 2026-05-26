@@ -1,0 +1,31 @@
+[package]
+name = "cortex-m-std"
+version = "0.1.0"
+edition = "2024"
+
+[[bin]]
+name = "cortex-m-std"
+harness = false
+
+[profile.dev]
+opt-level = 3
+codegen-units = 1
+panic = "immediate-abort"
+incremental = false
+
+[profile.release]
+opt-level = 3
+codegen-units = 1
+panic = "immediate-abort"
+incremental = false
+
+[dependencies]
+
+[dependencies.libc]
+version = "0.2"
+
+[dependencies.cortex-m]
+version = "0.7"
+
+[dependencies.cortex-m-rt]
+version = "0.7"
