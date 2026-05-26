@@ -29,3 +29,8 @@ version = "0.7"
 
 [dependencies.cortex-m-rt]
 version = "0.7"
+
+[dependencies.embedded-alloc]
+version = "0.7"
+default-features = false
+features = ["llff"]
