@@ -34,3 +34,6 @@ sync = []
 thread = []
 thread_local = []
 unwind = []
+
+linkage_weak = []
+nightly_linkage = []

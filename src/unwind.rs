@@ -22,6 +22,7 @@ type _Unwind_Trace_Fn =
     extern "C" fn(ctx: *mut _Unwind_Context, arg: *mut c_void) -> _Unwind_Reason_Code;
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn _Unwind_Backtrace(
     trace: _Unwind_Trace_Fn,
     trace_argument: *mut c_void,
@@ -30,16 +31,19 @@ extern "C" fn _Unwind_Backtrace(
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn _Unwind_GetIP(ctx: *mut _Unwind_Context) -> uintptr_t {
     0
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn _Unwind_FindEnclosingFunction(pc: *mut c_void) -> *mut c_void {
     null_mut()
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn _Unwind_GetCFA(ctx: *mut _Unwind_Context) -> uintptr_t {
     0
 }

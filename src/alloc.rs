@@ -3,6 +3,7 @@ use std::alloc::Layout;
 use libc::*;
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn calloc(nobj: size_t, size: size_t) -> *mut c_void {
     unsafe {
         let size = nobj * size;
@@ -18,6 +19,7 @@ extern "C" fn calloc(nobj: size_t, size: size_t) -> *mut c_void {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn malloc(size: size_t) -> *mut c_void {
     unsafe {
         let layout = Layout::from_size_align_unchecked(size, 4);
@@ -32,6 +34,7 @@ extern "C" fn malloc(size: size_t) -> *mut c_void {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn realloc(p: *mut c_void, size: size_t) -> *mut c_void {
     unsafe {
         let ptr = p as *mut u8;
@@ -42,6 +45,7 @@ extern "C" fn realloc(p: *mut c_void, size: size_t) -> *mut c_void {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn free(p: *mut c_void) {
     unsafe {
         let ptr = p as *mut u8;
@@ -52,6 +56,7 @@ extern "C" fn free(p: *mut c_void) {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn posix_memalign(memptr: *mut *mut c_void, align: size_t, size: size_t) -> c_int {
     unsafe {
         let layout = Layout::from_size_align_unchecked(size, align);

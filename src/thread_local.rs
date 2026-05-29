@@ -4,6 +4,7 @@ use std::ptr::null_mut;
 use libc::*;
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn pthread_key_create(
     key: *mut pthread_key_t,
     dtor: Option<unsafe extern "C" fn(*mut c_void)>,
@@ -24,6 +25,7 @@ extern "C" fn pthread_key_create(
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn pthread_key_delete(key: pthread_key_t) -> c_int {
     unsafe {
         let ptr = key as *mut (*mut c_void, Option<unsafe extern "C" fn(*mut c_void)>);
@@ -50,6 +52,7 @@ extern "C" fn pthread_key_delete(key: pthread_key_t) -> c_int {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn pthread_getspecific(key: pthread_key_t) -> *mut c_void {
     unsafe {
         let ptr = key as *mut (*mut c_void, Option<unsafe extern "C" fn(*mut c_void)>);
@@ -58,6 +61,7 @@ extern "C" fn pthread_getspecific(key: pthread_key_t) -> *mut c_void {
 }
 
 #[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn pthread_setspecific(key: pthread_key_t, value: *const c_void) -> c_int {
     unsafe {
         let ptr = key as *mut (*mut c_void, Option<unsafe extern "C" fn(*mut c_void)>);
