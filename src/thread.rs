@@ -1,4 +1,4 @@
-use std::ffi::c_int;
+use libc::*;
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
