@@ -12,11 +12,17 @@ mod atomic;
 #[cfg(feature = "fd")]
 mod fd;
 
+#[cfg(feature = "fs")]
+mod fs;
+
 #[cfg(feature = "io")]
 mod io;
 
 #[cfg(feature = "process")]
 mod process;
+
+#[cfg(feature = "pal")]
+mod pal;
 
 #[cfg(feature = "sync")]
 mod sync;

@@ -11,3 +11,9 @@ extern "C" fn close(fd: c_int) -> c_int {
 extern "C" fn write(fd: c_int, buf: *const c_void, count: size_t) -> ssize_t {
     0
 }
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn read(fd: c_int, buf: *mut c_void, count: size_t) -> ssize_t {
+    0
+}

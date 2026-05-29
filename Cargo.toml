@@ -11,14 +11,15 @@ version = "0.2"
 [dependencies.cortex-m]
 version = "0.7"
 default-features = false
-optional = true
 
 [features]
 all = [
     "alloc",
     "atomic",
     "fd",
+    "fs",
     "io",
+    "pal",
     "process",
     "sync",
     "thread",
@@ -26,9 +27,11 @@ all = [
     "unwind",
 ]
 alloc = []
-atomic = ["dep:cortex-m"]
+atomic = []
 fd = []
+fs = []
 io = []
+pal = []
 process = []
 sync = []
 thread = []
