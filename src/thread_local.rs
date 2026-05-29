@@ -30,8 +30,16 @@ extern "C" fn pthread_key_delete(key: pthread_key_t) -> c_int {
         if ptr.is_null() {
             return 1;
         }
-        if let Some(dtor) = (*ptr).1 {
-            dtor((*ptr).0);
+        loop {
+            let value = (*ptr).0;
+            (*ptr).0 = null_mut();
+            if value.is_null() {
+                break;
+            } else if let Some(dtor) = (*ptr).1 {
+                dtor(value);
+            } else {
+                break;
+            }
         }
         std::alloc::dealloc(
             ptr as *mut u8,
