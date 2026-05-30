@@ -4,14 +4,14 @@ use libc::*;
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn abort() -> ! {
     cortex_m::asm::bkpt();
-    loop {}
+    cortex_m::asm::udf();
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn exit(status: c_int) -> ! {
     cortex_m::asm::bkpt();
-    loop {}
+    cortex_m::asm::udf();
 }
 
 #[unsafe(no_mangle)]
