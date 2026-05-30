@@ -77,3 +77,13 @@ extern "C" fn pthread_cond_signal(cond: *mut pthread_cond_t) -> c_int {
 extern "C" fn pthread_cond_wait(cond: *mut pthread_cond_t, lock: *mut pthread_mutex_t) -> c_int {
     0
 }
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn pthread_cond_timedwait(
+    cond: *mut pthread_cond_t,
+    lock: *mut pthread_mutex_t,
+    abstime: *const timespec,
+) -> c_int {
+    0
+}
