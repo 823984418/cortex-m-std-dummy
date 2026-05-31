@@ -6,6 +6,7 @@ repository = "https://github.com/823984418/cortex-m-std-dummy"
 description = "A dummy/stub implementation of Rust std for Cortex-M processors, providing standard library APIs (alloc, fs, io, thread, etc.) for bare-metal embedded development with feature-gated support."
 keywords = ["cortex-m", "embedded", "no_std", "std", "bare-metal"]
 categories = ["embedded", "hardware-support", "no-std"]
+license = "MIT OR Apache-2.0"
 
 [dependencies]
 
