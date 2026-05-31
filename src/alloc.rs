@@ -2,12 +2,15 @@ use std::alloc::Layout;
 
 use libc::*;
 
+/// std::sys::alloc::MIN_ALIGN
+const MIN_ALIGN: usize = 8;
+
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn calloc(nobj: size_t, size: size_t) -> *mut c_void {
     unsafe {
         let size = nobj * size;
-        let layout = Layout::from_size_align_unchecked(size, 4);
+        let layout = Layout::from_size_align_unchecked(size, MIN_ALIGN);
         let (layout, offset) = Layout::new::<Layout>().extend(layout).unwrap_unchecked();
         let ptr = std::alloc::alloc_zeroed(layout);
         if ptr.is_null() {
@@ -22,7 +25,7 @@ extern "C" fn calloc(nobj: size_t, size: size_t) -> *mut c_void {
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn malloc(size: size_t) -> *mut c_void {
     unsafe {
-        let layout = Layout::from_size_align_unchecked(size, 4);
+        let layout = Layout::from_size_align_unchecked(size, MIN_ALIGN);
         let (layout, offset) = Layout::new::<Layout>().extend(layout).unwrap_unchecked();
         let ptr = std::alloc::alloc(layout);
         if ptr.is_null() {
