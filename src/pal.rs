@@ -25,3 +25,15 @@ extern "C" fn esp_fill_random(buf: *mut c_void, len: usize) {
 extern "C" fn getenv(s: *const c_char) -> *mut c_char {
     null_mut()
 }
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn setenv(name: *const c_char, val: *const c_char, overwrite: c_int) -> c_int {
+    0
+}
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn unsetenv(name: *const c_char) -> c_int {
+    0
+}
