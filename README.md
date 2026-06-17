@@ -36,6 +36,7 @@ Each functional module corresponds to an independent feature, which can be enabl
 | `thread`       | Thread operations                         |
 | `thread_local` | Thread-local storage                      |
 | `unwind`       | Stack unwinding                           |
+| `math`         | Math                                      |
 
 There are also two features that control the linking method:
 

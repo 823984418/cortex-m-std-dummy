@@ -35,3 +35,6 @@ mod thread_local;
 
 #[cfg(feature = "unwind")]
 mod unwind;
+
+#[cfg(feature = "math")]
+mod math;

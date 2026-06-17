@@ -31,6 +31,7 @@ POSIX C 库函数，从而允许链接器生成可以直接烧录的固件。
 | `thread`       | 线程操作                |
 | `thread_local` | 线程局部存储              |
 | `unwind`       | 栈展开                 |
+| `math`         | 数学                  |
 
 此外还有两个控制链接方式的 feature：
 

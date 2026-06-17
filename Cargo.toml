@@ -17,6 +17,9 @@ version = "0.2"
 version = "0.7"
 default-features = false
 
+[dependencies.libm]
+version = "0.2.16"
+
 [features]
 all = [
     "alloc",
@@ -30,6 +33,7 @@ all = [
     "thread",
     "thread_local",
     "unwind",
+    "math",
 ]
 alloc = []
 atomic = []
@@ -42,6 +46,7 @@ sync = []
 thread = []
 thread_local = []
 unwind = []
+math = []
 
 linkage_weak = []
 nightly_linkage = []
