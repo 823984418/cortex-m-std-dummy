@@ -1,310 +1,310 @@
-use std::ffi::{c_int, c_void};
-
-use libc::{size_t, ssize_t};
+use libc::*;
 use libm::Libm;
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn powf(x: f32, y: f32) -> f32 {
-    Libm::<f32>::pow(x, y)
+extern "C" fn powf(x: c_float, y: c_float) -> c_float {
+    Libm::<c_float>::pow(x, y)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn expf(x: f32) -> f32 {
-    Libm::<f32>::exp(x)
+extern "C" fn expf(x: c_float) -> c_float {
+    Libm::<c_float>::exp(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn exp2f(x: f32) -> f32 {
-    Libm::<f32>::exp2(x)
+extern "C" fn exp2f(x: c_float) -> c_float {
+    Libm::<c_float>::exp2(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn logf(x: f32) -> f32 {
-    Libm::<f32>::log(x)
+extern "C" fn logf(x: c_float) -> c_float {
+    Libm::<c_float>::log(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log2f(x: f32) -> f32 {
-    Libm::<f32>::log2(x)
+extern "C" fn log2f(x: c_float) -> c_float {
+    Libm::<c_float>::log2(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log10f(x: f32) -> f32 {
-    Libm::<f32>::log10(x)
+extern "C" fn log10f(x: c_float) -> c_float {
+    Libm::<c_float>::log10(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn hypotf(x: f32, y: f32) -> f32 {
-    Libm::<f32>::hypot(x, y)
+extern "C" fn hypotf(x: c_float, y: c_float) -> c_float {
+    Libm::<c_float>::hypot(x, y)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn sinf(x: f32) -> f32 {
-    Libm::<f32>::sin(x)
+extern "C" fn sinf(x: c_float) -> c_float {
+    Libm::<c_float>::sin(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn cosf(x: f32) -> f32 {
-    Libm::<f32>::cos(x)
+extern "C" fn cosf(x: c_float) -> c_float {
+    Libm::<c_float>::cos(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tanf(x: f32) -> f32 {
-    Libm::<f32>::tan(x)
+extern "C" fn tanf(x: c_float) -> c_float {
+    Libm::<c_float>::tan(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn asinf(x: f32) -> f32 {
-    Libm::<f32>::asin(x)
+extern "C" fn asinf(x: c_float) -> c_float {
+    Libm::<c_float>::asin(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn acosf(x: f32) -> f32 {
-    Libm::<f32>::acos(x)
+extern "C" fn acosf(x: c_float) -> c_float {
+    Libm::<c_float>::acos(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn atanf(x: f32) -> f32 {
-    Libm::<f32>::atan(x)
+extern "C" fn atanf(x: c_float) -> c_float {
+    Libm::<c_float>::atan(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn atan2f(y: f32, x: f32) -> f32 {
-    Libm::<f32>::atan2(y, x)
+extern "C" fn atan2f(y: c_float, x: c_float) -> c_float {
+    Libm::<c_float>::atan2(y, x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn expm1f(x: f32) -> f32 {
-    Libm::<f32>::expm1(x)
+extern "C" fn expm1f(x: c_float) -> c_float {
+    Libm::<c_float>::expm1(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log1pf(x: f32) -> f32 {
-    Libm::<f32>::log1p(x)
+extern "C" fn log1pf(x: c_float) -> c_float {
+    Libm::<c_float>::log1p(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn sinhf(x: f32) -> f32 {
-    Libm::<f32>::sinh(x)
+extern "C" fn sinhf(x: c_float) -> c_float {
+    Libm::<c_float>::sinh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn coshf(x: f32) -> f32 {
-    Libm::<f32>::cosh(x)
+extern "C" fn coshf(x: c_float) -> c_float {
+    Libm::<c_float>::cosh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tanhf(x: f32) -> f32 {
-    Libm::<f32>::tanh(x)
+extern "C" fn tanhf(x: c_float) -> c_float {
+    Libm::<c_float>::tanh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn asinhf(x: f32) -> f32 {
-    Libm::<f32>::asinh(x)
+extern "C" fn asinhf(x: c_float) -> c_float {
+    Libm::<c_float>::asinh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn acoshf(x: f32) -> f32 {
-    Libm::<f32>::acosh(x)
-}
-
-
-#[unsafe(no_mangle)]
-#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tgammaf(x: f32) -> f32 {
-    Libm::<f32>::tgamma(x)
+extern "C" fn acoshf(x: c_float) -> c_float {
+    Libm::<c_float>::acosh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn lgammaf_r(n: f32, s: &mut i32) -> f32 {
-    let (x, y) = Libm::<f32>::lgamma_r(n);
-    *s = y;
+extern "C" fn tgammaf(x: c_float) -> c_float {
+    Libm::<c_float>::tgamma(x)
+}
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn lgammaf_r(n: c_float, s: *mut c_int) -> c_float {
+    let (x, y) = Libm::<c_float>::lgamma_r(n);
+    unsafe {
+        *s = y;
+    }
     x
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn erff(x: f32) -> f32 {
-    Libm::<f32>::erf(x)
+extern "C" fn erff(x: c_float) -> c_float {
+    Libm::<c_float>::erf(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn erfcf(x: f32) -> f32 {
-    Libm::<f32>::erfc(x)
+extern "C" fn erfcf(x: c_float) -> c_float {
+    Libm::<c_float>::erfc(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn pow(x: f64, y: f64) -> f64 {
-    Libm::<f64>::pow(x, y)
+extern "C" fn pow(x: c_double, y: c_double) -> c_double {
+    Libm::<c_double>::pow(x, y)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn exp(x: f64) -> f64 {
-    Libm::<f64>::exp(x)
+extern "C" fn exp(x: c_double) -> c_double {
+    Libm::<c_double>::exp(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn exp2(x: f64) -> f64 {
-    Libm::<f64>::exp2(x)
+extern "C" fn exp2(x: c_double) -> c_double {
+    Libm::<c_double>::exp2(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log(x: f64) -> f64 {
-    Libm::<f64>::log(x)
+extern "C" fn log(x: c_double) -> c_double {
+    Libm::<c_double>::log(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log2(x: f64) -> f64 {
-    Libm::<f64>::log2(x)
+extern "C" fn log2(x: c_double) -> c_double {
+    Libm::<c_double>::log2(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log10(x: f64) -> f64 {
-    Libm::<f64>::log10(x)
+extern "C" fn log10(x: c_double) -> c_double {
+    Libm::<c_double>::log10(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn hypot(x: f64, y: f64) -> f64 {
-    Libm::<f64>::hypot(x, y)
+extern "C" fn hypot(x: c_double, y: c_double) -> c_double {
+    Libm::<c_double>::hypot(x, y)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn sin(x: f64) -> f64 {
-    Libm::<f64>::sin(x)
+extern "C" fn sin(x: c_double) -> c_double {
+    Libm::<c_double>::sin(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn cos(x: f64) -> f64 {
-    Libm::<f64>::cos(x)
+extern "C" fn cos(x: c_double) -> c_double {
+    Libm::<c_double>::cos(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tan(x: f64) -> f64 {
-    Libm::<f64>::tan(x)
+extern "C" fn tan(x: c_double) -> c_double {
+    Libm::<c_double>::tan(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn asin(x: f64) -> f64 {
-    Libm::<f64>::asin(x)
+extern "C" fn asin(x: c_double) -> c_double {
+    Libm::<c_double>::asin(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn acos(x: f64) -> f64 {
-    Libm::<f64>::acos(x)
+extern "C" fn acos(x: c_double) -> c_double {
+    Libm::<c_double>::acos(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn atan(x: f64) -> f64 {
-    Libm::<f64>::atan(x)
+extern "C" fn atan(x: c_double) -> c_double {
+    Libm::<c_double>::atan(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn atan2(y: f64, x: f64) -> f64 {
-    Libm::<f64>::atan2(y, x)
+extern "C" fn atan2(y: c_double, x: c_double) -> c_double {
+    Libm::<c_double>::atan2(y, x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn expm1(x: f64) -> f64 {
-    Libm::<f64>::expm1(x)
+extern "C" fn expm1(x: c_double) -> c_double {
+    Libm::<c_double>::expm1(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn log1p(x: f64) -> f64 {
-    Libm::<f64>::log1p(x)
+extern "C" fn log1p(x: c_double) -> c_double {
+    Libm::<c_double>::log1p(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn sinh(x: f64) -> f64 {
-    Libm::<f64>::sinh(x)
+extern "C" fn sinh(x: c_double) -> c_double {
+    Libm::<c_double>::sinh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn cosh(x: f64) -> f64 {
-    Libm::<f64>::cosh(x)
+extern "C" fn cosh(x: c_double) -> c_double {
+    Libm::<c_double>::cosh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tanh(x: f64) -> f64 {
-    Libm::<f64>::tanh(x)
+extern "C" fn tanh(x: c_double) -> c_double {
+    Libm::<c_double>::tanh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn asinh(x: f64) -> f64 {
-    Libm::<f64>::asinh(x)
+extern "C" fn asinh(x: c_double) -> c_double {
+    Libm::<c_double>::asinh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn acosh(x: f64) -> f64 {
-    Libm::<f64>::acosh(x)
-}
-
-
-#[unsafe(no_mangle)]
-#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn tgamma(x: f64) -> f64 {
-    Libm::<f64>::tgamma(x)
+extern "C" fn acosh(x: c_double) -> c_double {
+    Libm::<c_double>::acosh(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn lgamma_r(n: f64, s: &mut i32) -> f64 {
-    let (x, y) = Libm::<f64>::lgamma_r(n);
-    *s = y;
+extern "C" fn tgamma(x: c_double) -> c_double {
+    Libm::<c_double>::tgamma(x)
+}
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn lgamma_r(n: c_double, s: *mut c_int) -> c_double {
+    let (x, y) = Libm::<c_double>::lgamma_r(n);
+    unsafe {
+        *s = y;
+    }
     x
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn erf(x: f64) -> f64 {
-    Libm::<f64>::erf(x)
+extern "C" fn erf(x: c_double) -> c_double {
+    Libm::<c_double>::erf(x)
 }
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn erfc(x: f64) -> f64 {
-    Libm::<f64>::erfc(x)
+extern "C" fn erfc(x: c_double) -> c_double {
+    Libm::<c_double>::erfc(x)
 }
