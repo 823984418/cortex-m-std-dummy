@@ -28,26 +28,26 @@ all = [
     "fd",
     "fs",
     "io",
+    "math",
     "pal",
     "process",
     "sync",
     "thread",
     "thread_local",
     "unwind",
-    "math",
 ]
 alloc = []
 atomic = []
 fd = []
 fs = []
 io = []
+math = ["dep:libm"]
 pal = []
 process = []
 sync = []
 thread = []
 thread_local = []
 unwind = []
-math = ["dep:libm"]
 
 linkage_weak = []
 nightly_linkage = []
