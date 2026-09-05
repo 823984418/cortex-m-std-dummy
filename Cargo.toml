@@ -1,6 +1,6 @@
 [package]
 name = "cortex-m-std-dummy"
-version = "0.1.2"
+version = "0.2.0"
 edition = "2024"
 repository = "https://github.com/823984418/cortex-m-std-dummy"
 description = "A dummy/stub implementation of Rust std for Cortex-M processors, providing standard library APIs (alloc, fs, io, thread, etc.) for bare-metal embedded development with feature-gated support."
@@ -13,9 +13,10 @@ license = "MIT OR Apache-2.0"
 [dependencies.libc]
 version = "0.2"
 
-[dependencies.cortex-m]
-version = "0.7"
+[dependencies.critical-section]
+version = "1.2.0"
 default-features = false
+optional = true
 
 [dependencies.libm]
 version = "0.2.16"
@@ -37,7 +38,7 @@ all = [
     "unwind",
 ]
 alloc = []
-atomic = []
+atomic = ["dep:critical-section"]
 fd = []
 fs = []
 io = []
@@ -51,3 +52,21 @@ unwind = []
 
 linkage_weak = []
 nightly_linkage = []
+
+[package.metadata.docs.rs]
+targets = [
+    "json-target-spec/riscv32i-unknown-none-elf.json",
+    "json-target-spec/riscv32im-unknown-none-elf.json",
+    "json-target-spec/riscv32ima-unknown-none-elf.json",
+    "json-target-spec/riscv32imc-unknown-none-elf.json",
+    "json-target-spec/riscv32imfc-unknown-none-elf.json",
+    "json-target-spec/riscv32imac-unknown-none-elf.json",
+    "json-target-spec/riscv32imafc-unknown-none-elf.json",
+    "json-target-spec/thumbv6m-none-eabi.json",
+    "json-target-spec/thumbv7m-none-eabi.json",
+    "json-target-spec/thumbv7em-none-eabi.json",
+    "json-target-spec/thumbv7em-none-eabihf.json",
+    "json-target-spec/thumbv8m.base-none-eabi.json",
+    "json-target-spec/thumbv8m.main-none-eabi.json",
+    "json-target-spec/thumbv8m.main-none-eabihf.json",
+]

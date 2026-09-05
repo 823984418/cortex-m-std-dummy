@@ -4,6 +4,7 @@ use libc::*;
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+#[allow(invalid_runtime_symbol_definitions)]
 extern "C" fn open(path: *const c_char, oflag: c_int /*, ...*/) -> c_int {
     0
 }
@@ -49,9 +50,16 @@ extern "C" fn lstat(path: *const c_char, buf: *mut stat) -> c_int {
 extern "C" fn mkdir(path: *const c_char, mode: mode_t) -> c_int {
     0
 }
+
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
 extern "C" fn stat(path: *const c_char, buf: *mut stat) -> c_int {
+    0
+}
+
+#[unsafe(no_mangle)]
+#[cfg_attr(feature = "linkage_weak", linkage = "weak")]
+extern "C" fn fstat(fd: c_int, buf: *mut stat) -> c_int {
     0
 }
 

@@ -1,10 +1,30 @@
 [build]
 target = [
-    "thumbv6m-none-eabi",
-    "thumbv7m-none-eabi",
-    "thumbv7em-none-eabi",
-    "thumbv7em-none-eabihf",
-    "thumbv8m.base-none-eabi",
-    "thumbv8m.main-none-eabi",
-    "thumbv8m.main-none-eabihf",
+    "json-target-spec/riscv32i-unknown-none-elf.json",
+    "json-target-spec/riscv32im-unknown-none-elf.json",
+    "json-target-spec/riscv32ima-unknown-none-elf.json",
+    "json-target-spec/riscv32imc-unknown-none-elf.json",
+    "json-target-spec/riscv32imfc-unknown-none-elf.json",
+    "json-target-spec/riscv32imac-unknown-none-elf.json",
+    "json-target-spec/riscv32imafc-unknown-none-elf.json",
+    "json-target-spec/thumbv6m-none-eabi.json",
+    "json-target-spec/thumbv7m-none-eabi.json",
+    "json-target-spec/thumbv7em-none-eabi.json",
+    "json-target-spec/thumbv7em-none-eabihf.json",
+    "json-target-spec/thumbv8m.base-none-eabi.json",
+    "json-target-spec/thumbv8m.main-none-eabi.json",
+    "json-target-spec/thumbv8m.main-none-eabihf.json",
+]
+
+[unstable]
+json-target-spec = true
+panic-immediate-abort = true
+build-std = [
+    "core",
+    "alloc",
+    "panic_abort",
+    "std",
+]
+build-std-features = [
+    "optimize_for_size",
 ]

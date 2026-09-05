@@ -33,7 +33,7 @@ extern "C" fn calloc(nobj: size_t, size: size_t) -> *mut c_void {
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn malloc(size: size_t) -> *mut c_void {
+unsafe extern "C" fn malloc(size: size_t) -> *mut c_void {
     unsafe {
         if size == 0 {
             return std::ptr::null_mut();
@@ -56,7 +56,7 @@ extern "C" fn malloc(size: size_t) -> *mut c_void {
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn realloc(p: *mut c_void, size: size_t) -> *mut c_void {
+unsafe extern "C" fn realloc(p: *mut c_void, size: size_t) -> *mut c_void {
     unsafe {
         if size == 0 {
             free(p);
@@ -90,7 +90,7 @@ extern "C" fn realloc(p: *mut c_void, size: size_t) -> *mut c_void {
 
 #[unsafe(no_mangle)]
 #[cfg_attr(feature = "linkage_weak", linkage = "weak")]
-extern "C" fn free(p: *mut c_void) {
+unsafe extern "C" fn free(p: *mut c_void) {
     unsafe {
         if p.is_null() {
             return;
